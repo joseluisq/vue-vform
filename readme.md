@@ -1,6 +1,6 @@
 # vue-vform
 
-> VueJS 2 form component that integrate jQuery Validation and Axios.
+> [Vue.js 2](https://vuejs.org/) form component that integrate [jQuery Validation](https://github.com/jquery-validation/jquery-validation) and [Axios](https://github.com/mzabriskie/axios).
 
 
 ## Install
@@ -113,13 +113,15 @@ The  Vue.js `data` key name that it will send.
 
 #### request (optional)
 
-If `request` attribute is defined in __vform__ markup an __Axios Promise object__ is passed to your callback. (`request` is optional)
+If `request` attribute is defined in __vform__ markup an __Axios Promise object__ is passed to your callback.
 
 #### accept (optional)
 
 The request `Accept` header. Default: "application/json"
 
-#### @validate (Event)
+## Events
+
+#### @validate
 
 Event when validation is completed.
 
