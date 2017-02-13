@@ -90,6 +90,10 @@ In your entry app:
 ```js
 const Vue = require('vue')
 
+// jQuery and jQuery Validation
+window.$ = window.jQuery = require('jquery')
+require('jquery-validation')
+
 Vue.component('vform', require('vue-vform'))
 Vue.component('custom-form-component', require('./components/custom-form-component'))
 
