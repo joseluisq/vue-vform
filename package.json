@@ -1,0 +1,27 @@
+{
+  "name": "vue-vform",
+  "version": "0.0.0",
+  "description": "Vue.js 2 form component that integrates jQuery Validation and Axios.",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseluisq/vue-vform.git"
+  },
+  "keywords": [
+    "vue",
+    "form",
+    "validation",
+    "component",
+    "request",
+    "ajax"
+  ],
+  "author": "Jose Luis Quintana <https://git.io/joseluisq>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joseluisq/vue-vform/issues"
+  },
+  "homepage": "https://github.com/joseluisq/vue-vform#readme"
+}
