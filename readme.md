@@ -1,6 +1,6 @@
 # vue-vform
 
-> [Vue.js 2](https://vuejs.org/) form component that integrate [jQuery Validation](https://github.com/jquery-validation/jquery-validation) and [Axios](https://github.com/mzabriskie/axios).
+> [Vue.js 2](https://vuejs.org/) form component that integrates [jQuery Validation](https://github.com/jquery-validation/jquery-validation) and [Axios](https://github.com/mzabriskie/axios).
 
 
 ## Install
@@ -12,6 +12,7 @@ npm install vue-vform --save-dev
 ## Prerequisites
 
 - [Vue.js 2](https://vuejs.org/)
+- [jQuery](https://github.com/jquery/jquery)
 - [jQuery Validation](https://github.com/jquery-validation/jquery-validation)
 - [Axios](https://github.com/mzabriskie/axios) (optional)
 
@@ -25,15 +26,15 @@ For example in your `custom-form-component.vue`:
 <template>
   <vform
     request
+    v-bind:params="user"
     accept="application/json"
-    params="user"
 
     id="myform"
     method="post"
     action="/api/v1/user/add"
     @validate="mySubmitCallback">
 
-    <!-- Bootstrap markup example -->
+    <!-- Your cool stuff -->
     <div class="form-group">
       <label for="txtname">Name</label>
       <input
@@ -55,6 +56,7 @@ For example in your `custom-form-component.vue`:
         data-msg-email="Enter a valid E-mail address"
         type="text" class="form-control">
     </div>
+    <!-- //Your cool stuff -->
 
 	</vform>
 </template>
@@ -106,18 +108,18 @@ const app = new Vue({
 ## Attributes
 
 #### method
-The request method (POST, PUT, DELETE, etc)
+The request method (POST, PUT, DELETE, etc). For dynamic value use `v-bind:method="myMethod" or `:method="myMethod"`.
 
 #### action
 The request URL.
 
-#### params
-
-The  Vue.js `data` key name that it will send.
-
 #### request (optional)
 
-If `request` attribute is defined in __vform__ markup an __Axios Promise object__ is passed to your callback.
+If `request` (String) attribute is defined `vform` performs an Ajax Request using __Axios__ and a __Promise object__ is passed to your callback. Make sure that you have [Axios](https://github.com/mzabriskie/axios) before.
+
+#### params (optional)
+
+The component data binding (usually `FormData` or plain object `{}` values) that it will send if `request` option was setted. (use `v-bind:param="mydata"` or `:param="mydata"` property)
 
 #### accept (optional)
 
@@ -127,7 +129,7 @@ The request `Accept` header. Default: "application/json"
 
 #### @validate
 
-Event when validation is completed.
+Event when validation is completed. You need to pass the callback defined in your `methods: ...`.
 
 ## Tip
 __Laravel v5.4 users__: It's necessary to define the [Axios](https://github.com/mzabriskie/axios) common headers in your `app.js` file. That's is useful when your use [Laravel v5.4](https://laravel.com/docs/5.4/) and [Passport](https://laravel.com/docs/5.4/passport).
@@ -139,7 +141,6 @@ axios.defaults.headers.common = {
   'X-CSRF-TOKEN': Laravel.csrfToken
 }
 ```
-
 
 ## License
 MIT license

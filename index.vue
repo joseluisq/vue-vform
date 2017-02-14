@@ -1,6 +1,5 @@
 <template>
-  <form
-    :id="id" :class="classes" :name="name" :params="params"
+  <form :id="id" :request="request" :class="classes" :name="name"
     :action="action" :method="method" :accept="accept">
     <slot></slot>
   </form>
@@ -12,10 +11,13 @@
       'id': String,
       'name': String,
       'classes': String,
-      'params': String,
       'request': {
         type: Boolean,
         default: false
+      },
+      'params': {
+        type: Object,
+        default: {}
       },
       'action': {
         type: String,
@@ -27,7 +29,6 @@
         default: 'POST',
         validator: value => {
           switch (value.toUpperCase()) {
-            case 'GET': return true
             case 'POST': return true
             case 'PUT': return true
             case 'DELETE': return true
@@ -61,7 +62,6 @@
             let promise = null
 
             if (this.request) {
-              const data = this.$parent[this.params] || null
               promise = axios({
                 url: this.action,
                 headers: {
@@ -69,7 +69,7 @@
                   'X-Requested-With': 'XMLHttpRequest'
                 },
                 method: this.method,
-                data
+                data: this.params
               })
             }
 
