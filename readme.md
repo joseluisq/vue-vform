@@ -96,6 +96,9 @@ const Vue = require('vue')
 window.$ = window.jQuery = require('jquery')
 require('jquery-validation')
 
+// If you want auto form Ajax request (optional)
+window.axios = require('axios')
+
 Vue.component('vform', require('vue-vform'))
 Vue.component('custom-form-component', require('./components/custom-form-component'))
 
