@@ -108,7 +108,7 @@ const app = new Vue({
 ## Attributes
 
 #### method
-The request method (POST, PUT, DELETE, etc). For dynamic value use `v-bind:method="myMethod" or `:method="myMethod"`.
+The request method (POST, PUT, DELETE, etc). For dynamic value use `v-bind:method="myMethod"` or `:method="myMethod"`.
 
 #### action
 The request URL.
@@ -123,7 +123,7 @@ The component data binding (usually `FormData` or plain object `{}` values) that
 
 #### accept (optional)
 
-The request `Accept` header. Default: "application/json"
+The request `Accept` header. Default: `application/json`
 
 ## Events
 
