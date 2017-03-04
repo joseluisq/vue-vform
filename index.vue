@@ -1,6 +1,5 @@
 <template>
-  <form :id="id" :request="request" :class="classes" :name="name"
-    :action="action" :method="method" :accept="accept">
+  <form>
     <slot></slot>
   </form>
 </template>
@@ -8,24 +7,15 @@
 <script>
   export default {
     props: {
-      'id': String,
-      'name': String,
-      'classes': String,
-      'request': {
-        type: Boolean,
-        default: false
-      },
+      'request': Boolean,
       'params': {
         type: Object,
         default: {}
       },
-      'action': {
-        type: String,
-        required: false
-      },
+      'action': String,
       'method': {
         type: String,
-        required: true,
+        required: false,
         default: 'POST',
         validator: value => {
           switch (value.toUpperCase()) {

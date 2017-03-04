@@ -26,10 +26,8 @@ For example in your `custom-form-component.vue`:
 <template>
   <vform
     request
-    v-bind:params="user"
     accept="application/json"
-
-    id="myform"
+    :params="user"
     method="post"
     action="/api/v1/user/add"
     @validate="mySubmitCallback">
@@ -110,15 +108,15 @@ const app = new Vue({
 
 ## Attributes
 
-#### method
+#### method (optional)
 The request method (POST, PUT, DELETE, etc). For dynamic value use `v-bind:method="myMethod"` or `:method="myMethod"`.
 
-#### action
+#### action (optional)
 The request URL.
 
 #### request (optional)
 
-If `request` (String) attribute is defined `vform` performs an Ajax Request using __Axios__ and a __Promise object__ is passed to your callback. Make sure that you have [Axios](https://github.com/mzabriskie/axios) before.
+If `request` (Boolean) attribute is defined `vform` performs an Ajax Request using __Axios__ and a __Promise object__ is passed to your callback. Make sure that you have [Axios](https://github.com/mzabriskie/axios) before.
 
 #### params (optional)
 
@@ -132,7 +130,7 @@ The request `Accept` header. Default: `application/json`
 
 #### @validate
 
-Event when validation is completed. You need to pass the callback defined in your `methods: ...`.
+Event when validation is completed. You need to pass the callback defined in your `methods: ...`. A Promise object will be passed if `request` attribute was defined.
 
 ## Tip
 __Laravel v5.4 users__: It's necessary to define the [Axios](https://github.com/mzabriskie/axios) common headers in your `app.js` file. That's is useful when your use [Laravel v5.4](https://laravel.com/docs/5.4/) and [Passport](https://laravel.com/docs/5.4/passport).
