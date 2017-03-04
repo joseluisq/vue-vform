@@ -1,6 +1,6 @@
 {
   "name": "vue-vform",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue.js 2 form component that integrates jQuery Validation and Axios.",
   "main": "index.vue",
   "scripts": {
