@@ -8,11 +8,11 @@
   export default {
     props: {
       'request': Boolean,
+      'action': String,
       'params': {
         type: Object,
-        default: {}
+        default: () => {}
       },
-      'action': String,
       'method': {
         type: String,
         required: false,
