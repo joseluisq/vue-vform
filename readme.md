@@ -14,7 +14,7 @@ npm install vue-vform --save-dev
 - [Vue.js 2](https://vuejs.org/)
 - [jQuery](https://github.com/jquery/jquery)
 - [jQuery Validation](https://github.com/jquery-validation/jquery-validation)
-- [Axios](https://github.com/mzabriskie/axios) (optional)
+- [Axios](https://github.com/mzabriskie/axios) (optional if you want to send an Ajax request after validation)
 
 ## Usage
 
@@ -26,7 +26,6 @@ For example in your `custom-form-component.vue`:
 <template>
   <vform
     request
-    accept="application/json"
     :params="user"
     method="post"
     action="/api/v1/user/add"
@@ -61,7 +60,7 @@ For example in your `custom-form-component.vue`:
 
 <script>
   export default {
-  	data() {
+    data() {
       return {
       	user: {
           name: '',
@@ -70,17 +69,17 @@ For example in your `custom-form-component.vue`:
       }
     }
 
-  	methods: {
-  	  /**
+    methods: {
+      /**
        * Callback method when validation is completed.
        */
       mySubmitCallback (promise) {
         promise
-	        .then(response => response.data)
-	        .then(data => console.log(data))
-	        .catch(err => console.log(err.message))
+          .then(response => response.data)
+          .then(data => console.log(data))
+          .catch(err => console.log(err.message))
       }
-  	}
+    }
   }
 </script>
 ```
