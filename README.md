@@ -24,8 +24,10 @@ For example in your `custom-form-component.vue`:
 
 ```html
 <template>
+
   <vform
     request
+
     :params="user"
     method="post"
     action="/api/v1/user/add"
@@ -55,19 +57,22 @@ For example in your `custom-form-component.vue`:
     </div>
     <!-- //Your cool stuff -->
 
+    <button type="submit" class="btn btn-primary">Submit</button>
+
   </vform>
+
 </template>
 
 <script>
   export default {
-    data() {
+    data () {
       return {
       	user: {
           name: '',
           email: ''
         }
       }
-    }
+    },
 
     methods: {
       /**
