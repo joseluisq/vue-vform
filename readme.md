@@ -55,7 +55,7 @@ For example in your `custom-form-component.vue`:
     </div>
     <!-- //Your cool stuff -->
 
-	</vform>
+  </vform>
 </template>
 
 <script>
