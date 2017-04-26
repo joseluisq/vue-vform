@@ -21,6 +21,10 @@
     "request",
     "ajax"
   ],
+  "peerDependencies": {
+    "jquery": "^2.0",
+    "jquery-validation": "^1.16"
+  },
   "author": "Jose Luis Quintana <https://git.io/joseluisq>",
   "license": "MIT",
   "bugs": {
