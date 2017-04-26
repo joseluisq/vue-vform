@@ -5,6 +5,13 @@
 
 ## Install
 
+[Yarn](https://yarnpkg.com/lang/en/)
+
+```sh
+yarn add vue-vform --dev
+```
+
+[NPM](https://www.npmjs.com/)
 ```sh
 npm install vue-vform --save-dev
 ```
@@ -14,7 +21,7 @@ npm install vue-vform --save-dev
 - [Vue.js 2](https://vuejs.org/)
 - [jQuery](https://github.com/jquery/jquery)
 - [jQuery Validation](https://github.com/jquery-validation/jquery-validation)
-- [Axios](https://github.com/mzabriskie/axios) (optional if you want to send an Ajax request after validation)
+- [Axios](https://github.com/mzabriskie/axios) (optional if you want to send (automatically) an Ajax request after validation)
 
 ## Usage
 
