@@ -3,6 +3,12 @@
   "version": "1.0.3",
   "description": "Vue.js 2 form component that integrates jQuery Validation and Axios.",
   "main": "index.vue",
+  "author": "Jose Luis Quintana <https://git.io/joseluisq>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joseluisq/vue-vform/issues"
+  },
+  "homepage": "https://github.com/joseluisq/vue-vform#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit"
   },
@@ -22,13 +28,32 @@
     "ajax"
   ],
   "peerDependencies": {
+    "vue": ">= 2.0",
     "jquery": "^1.7 || ^2.0 || ^3.1",
     "jquery-validation": "^1.16"
   },
-  "author": "Jose Luis Quintana <https://git.io/joseluisq>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/joseluisq/vue-vform/issues"
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
   },
-  "homepage": "https://github.com/joseluisq/vue-vform#readme"
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "standard"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }

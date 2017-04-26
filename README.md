@@ -113,7 +113,7 @@ const app = new Vue({
 ## Attributes
 
 #### method (optional)
-The request method (POST, PUT, DELETE, etc). For dynamic value use `v-bind:method="myMethod"` or `:method="myMethod"`.
+The request method (POST, PUT, DELETE, PATCH). For dynamic value use `v-bind:method="myMethod"` or `:method="myMethod"`.
 
 #### action (optional)
 The request URL.

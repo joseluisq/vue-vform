@@ -1,0 +1,5 @@
+*.js
+*.lock
+*.yml
+.gitignore
+.npmignore
